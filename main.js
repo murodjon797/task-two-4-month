@@ -23,8 +23,6 @@ fetch('https://dummyjson.com/products')
             deleteBtn.textContent = "Delete"
             deleteBtn.dataset.id = e.id
 
-
-           
             productBox.appendChild(deleteBtn)
 
             productBox.appendChild(productTitle)
