@@ -15,7 +15,7 @@ fetch('https://dummyjson.com/products')
 
             productBox.appendChild(productImage)
 
-            
+
 
             let productTitle = document.createElement('p')
             productTitle.textContent = e.title
@@ -36,15 +36,23 @@ fetch('https://dummyjson.com/products')
 
                 const id = e.target.dataset.id
 
-                fetch(`https://dummyjson.com/products/${id}`, {
-                    method: 'DELETE'
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        if(data.isDeleted) {
-                            alert("Ochirildi oka")
-                        }
-                    });
+                if (confirm("Rostdan ochirmoqchimisiz ? cancel yoki ok")) {
+                    
+                    fetch(`https://dummyjson.com/products/${id}`, {
+                        method: 'DELETE'
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if(data.isDeleted) {
+                                console.log(data)
+                                alert("Ochirildi oka")
+                            }
+                        });
+
+                  } else {
+                    console.log("Declined")
+                  }
+
             })
         })
     })
