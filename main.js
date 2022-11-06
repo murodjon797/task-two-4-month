@@ -30,8 +30,7 @@ fetch('https://dummyjson.com/products')
             productBox.appendChild(productTitle)
 
             boxes.appendChild(productBox)
-
-
+            
             deleteBtn.addEventListener('click',(e) => {
 
                 const id = e.target.dataset.id
