@@ -16,7 +16,6 @@ fetch('https://dummyjson.com/products')
             productBox.appendChild(productImage)
 
 
-
             let productTitle = document.createElement('p')
             productTitle.textContent = e.title
 
